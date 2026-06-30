@@ -337,6 +337,29 @@ a { text-decoration: none; color: inherit; }
 
 /* Fly-in animations disabled - was causing invisible images */
 
+/* ===== Fly-in Animations ===== */
+/* Hidden initial state */
+.fly-in-hidden {
+  opacity: 0;
+  transform: translateY(40px) scale(0.92);
+}
+
+/* Animated state */
+.fly-in-active {
+  animation: flyInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes flyInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 /* ===== Responsive - tablet ===== */
 @media (min-width: 600px) {
   .name-groom, .name-bride { font-size: 36px; letter-spacing: 4px; }
