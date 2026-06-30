@@ -340,9 +340,67 @@ function previewGalleryImage(index) {
   }
 }
 
-// ===== Scroll Animations (disabled - caused images to be invisible) =====
+// ===== Scroll Animations =====
+// Video auto-pause when scrolled out of viewport
+// Sticker photos fly-in animation when scrolled into viewport
 function initScrollAnimations() {
-  // No-op: all elements visible by default
+  // ----- Video auto-pause -----
+  var video = document.getElementById('weddingVideo')
+  if (video) {
+    var videoObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) {
+          // Video scrolled out of view, pause it
+          if (!video.paused) {
+            video.pause()
+          }
+        }
+      })
+    }, {
+      threshold: 0.15,
+      // Trigger when video is mostly out of view
+      rootMargin: '0px 0px -60% 0px'
+    })
+    videoObserver.observe(video)
+  }
+
+  // ----- Sticker photo fly-in -----
+  var flyElements = document.querySelectorAll('.sticker-stick-wrap, .sticker-embed-wrap')
+  // Exclude the video sticker wrapper
+  flyElements = Array.prototype.filter.call(flyElements, function(el) {
+    return !el.classList.contains('sticker-video')
+  })
+
+  // Add fly-in initial state
+  flyElements.forEach(function(el) {
+    el.classList.add('fly-in-hidden')
+  })
+
+  if ('IntersectionObserver' in window) {
+    var photoObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          // Element is fully in view, trigger fly-in animation
+          entry.target.classList.add('fly-in-active')
+          entry.target.classList.remove('fly-in-hidden')
+          photoObserver.unobserve(entry.target)
+        }
+      })
+    }, {
+      // Trigger when element is mostly visible
+      threshold: 0.3
+    })
+
+    flyElements.forEach(function(el) {
+      photoObserver.observe(el)
+    })
+  } else {
+    // Fallback: show all immediately
+    flyElements.forEach(function(el) {
+      el.classList.remove('fly-in-hidden')
+      el.classList.add('fly-in-active')
+    })
+  }
 }
 
 // ===== Map Navigation =====
