@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>蒋丁男 & 刘楠楠的婚礼邀请函 | 2026.10.03</title>
+  <meta name="description" content="蒋丁男 & 刘楠楠 诚挚邀请您参加我们的婚礼 2026年10月3日 · 银川市雲宴婚礼庄园">
+  <meta name="author" content="蒋丁男 & 刘楠楠">
+
+  <!-- Open Graph / Facebook / WhatsApp / Line -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="蒋丁男 & 刘楠楠的婚礼邀请函">
+  <meta property="og:description" content="2026年10月3日 星期六 · 银川市雲宴婚礼庄园\n诚邀您见证我们的幸福时刻">
+  <meta property="og:image" content="images/share-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="婚礼邀请函">
+
+  <!-- WeChat / QQ -->
+  <meta itemprop="name" content="蒋丁男 & 刘楠楠的婚礼邀请函">
+  <meta itemprop="description" content="2026年10月3日 星期六 · 银川市雲宴婚礼庄园 · 诚邀您见证我们的幸福时刻">
+  <meta itemprop="image" content="images/share-cover.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="蒋丁男 & 刘楠楠的婚礼邀请函">
+  <meta name="twitter:description" content="2026年10月3日 · 银川市雲宴婚礼庄园 · 诚邀您见证我们的幸福时刻">
+  <meta name="twitter:image" content="images/share-cover.jpg">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 浮动音乐按钮（固定跟随屏幕） -->
+  <div class="music-btn" id="musicBtn">
+    <div class="music-icon-wrap">
+      <span class="music-icon">♪</span>
+    </div>
+  </div>
+
+  <!-- 背景音乐 -->
+  <audio id="bgMusic" loop preload="auto" autoplay>
+    <source src="images/bgm.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ===== 封面区 ===== -->
+  <section class="cover-section" id="coverSection">
+    <div class="cover-image-wrap">
+      <img class="cover-silhouette" id="coverImage" src="images/couple-silhouette.jpg" alt="封面">
+      <div class="cover-gradient-mask"></div>
+      <div class="cover-text-layer">
+        <div class="cover-names fade-in-up">
+          <span class="name-groom">蒋丁男</span>
+          <span class="name-amp">&</span>
+          <span class="name-bride">刘楠楠</span>
+        </div>
+        <div class="cover-date fade-in">
+          <span class="cover-date-text" id="weddingDateDisplay"></span>
+        </div>
+        <div class="cover-divider fade-in">
+          <div class="deco-line"></div>
+          <div class="deco-diamond"></div>
+          <div class="deco-line"></div>
+        </div>
+        <div class="countdown-section fade-in-up">
+          <span class="countdown-label">COUNTDOWN</span>
+          <div class="countdown-boxes">
+            <div class="countdown-item">
+              <span class="countdown-num" id="days">0</span>
+              <span class="countdown-unit">天</span>
+            </div>
+            <div class="countdown-dot">·</div>
+            <div class="countdown-item">
+              <span class="countdown-num" id="hours">00</span>
+              <span class="countdown-unit">时</span>
+            </div>
+            <div class="countdown-dot">·</div>
+            <div class="countdown-item">
+              <span class="countdown-num" id="minutes">00</span>
+              <span class="countdown-unit">分</span>
+            </div>
+            <div class="countdown-dot">·</div>
+            <div class="countdown-item">
+              <span class="countdown-num" id="seconds">00</span>
+              <span class="countdown-unit">秒</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint fade-in">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== 邀请函详情 ===== -->
+  <section class="detail-section">
+    <!-- 视频区 -->
+    <div class="video-sticker-section">
+      <div class="video-label">
+        <div class="vl-line"></div>
+        <span class="vl-text">WEDDING INVITATION</span>
+        <div class="vl-line"></div>
+      </div>
+      <div class="sticker-stick-wrap sticker-video">
+        <div class="sticker-tape"></div>
+        <video
+          id="weddingVideo"
+          class="wedding-video-sticker"
+          src="images/wedding.mp4"
+          controls
+          preload="auto"
+          playsinline
+          webkit-playsinline
+        ></video>
+      </div>
+    </div>
+
+    <!-- 过渡文字 -->
+    <div class="transition-words">
+      <div class="transition-ornament">
+        <div class="transition-line"></div>
+        <div class="transition-diamond"></div>
+        <div class="transition-line"></div>
+      </div>
+      <span class="transition-text">世间所有的相遇，都是久别重逢</span>
+      <span class="transition-text">而我们选择了彼此，便是一生</span>
+      <span class="transition-text-sub" id="weddingDateText"></span>
+      <span class="transition-text-sub">诚邀您见证我们的幸福时刻</span>
+    </div>
+
+    <!-- 左图 + 右流程时间 -->
+    <div class="split-row split-lr">
+      <div class="sticker-embed-wrap" id="photo2Wrap">
+        <div class="sticker-tape"></div>
+        <img class="sticker-embed-img" id="photo2" src="images/photo-3.jpg" alt="照片">
+      </div>
+      <div class="split-info split-schedule">
+        <span class="split-info-title">WEDDING DAY</span>
+        <div class="split-info-divider">
+          <div class="sid-line"></div>
+          <div class="sid-diamond"></div>
+          <div class="sid-line"></div>
+        </div>
+        <div class="mini-schedule">
+          <div class="mini-sch-item">
+            <span class="mini-sch-time">10:58</span>
+            <span class="mini-sch-event">迎宾签到</span>
+          </div>
+          <div class="mini-sch-dot-wrap">
+            <div class="mini-sch-dot"></div>
+            <div class="mini-sch-line"></div>
+          </div>
+          <div class="mini-sch-item">
+            <span class="mini-sch-time">11:28</span>
+            <span class="mini-sch-event">婚礼仪式</span>
+          </div>
+          <div class="mini-sch-dot-wrap">
+            <div class="mini-sch-dot"></div>
+            <div class="mini-sch-line"></div>
+          </div>
+          <div class="mini-sch-item">
+            <span class="mini-sch-time">11:58</span>
+            <span class="mini-sch-event">婚礼午宴</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 左地点 + 右图 -->
+    <div class="split-row split-lr split-venue-row">
+      <div class="split-info split-venue" id="venueWrap">
+        <span class="split-info-title">VENUE</span>
+        <div class="split-info-divider">
+          <div class="sid-line"></div>
+          <div class="sid-diamond"></div>
+          <div class="sid-line"></div>
+        </div>
+        <span class="venue-highlight-name">雲宴婚礼庄园</span>
+        <span class="venue-highlight-hall">圣托里尼厅</span>
+        <span class="venue-highlight-addr">银川市兴庆区雲宴婚礼庄园</span>
+        <div class="venue-mini-nav">
+          <span class="venue-mini-nav-text">点击导航 →</span>
+        </div>
+      </div>
+      <div class="sticker-embed-wrap sticker-embed-r" id="photo1Wrap">
+        <div class="sticker-tape sticker-tape-r"></div>
+        <img class="sticker-embed-img" id="photo1" src="images/photo-2.jpg" alt="照片">
+      </div>
+    </div>
+
+    <!-- 过渡文字 -->
+    <div class="section-bridge">
+      <span class="bridge-text">山海万里，只为赴一场约</span>
+    </div>
+
+    <!-- 两张横屏照片 -->
+    <div class="sticker-row sticker-row-two">
+      <div class="sticker-stick-wrap" id="photo0Wrap">
+        <div class="sticker-tape"></div>
+        <img class="sticker-stick-img" id="photo0" src="images/photo-1.jpg" alt="照片">
+      </div>
+      <div class="sticker-stick-wrap sticker-tilt-l" id="photo13Wrap">
+        <div class="sticker-tape"></div>
+        <img class="sticker-stick-img" id="photo13" src="images/photo-14.jpg" alt="照片">
+      </div>
+    </div>
+
+    <!-- 照片集轮播 -->
+    <div class="gallery-section">
+      <div class="gallery-preface">
+        <span class="gallery-preface-text">何其有幸，能借婚礼之名与你相见，<br>来见我们简单而诚挚的爱情</span>
+      </div>
+      <div class="gallery-label">
+        <div class="vl-line"></div>
+        <span class="vl-text">GALLERY</span>
+        <div class="vl-line"></div>
+      </div>
+      <div class="gallery-swiper" id="gallerySwiper">
+        <div class="gallery-track" id="galleryTrack">
+          <div class="gallery-item"><img class="gallery-img" src="images/photo-4.jpg" alt="照片1"></div>
+          <div class="gallery-item"><img class="gallery-img" src="images/photo-5.jpg" alt="照片2"></div>
+          <div class="gallery-item"><img class="gallery-img" src="images/photo-6.jpg" alt="照片3"></div>
+          <div class="gallery-item"><img class="gallery-img" src="images/photo-7.jpg" alt="照片4"></div>
+          <div class="gallery-item"><img class="gallery-img" src="images/photo-8.jpg" alt="照片5"></div>
+          <div class="gallery-item"><img class="gallery-img" src="images/photo-9.jpg" alt="照片6"></div>
+          <div class="gallery-item"><img class="gallery-img" src="images/photo-10.jpg" alt="照片7"></div>
+          <div class="gallery-item"><img class="gallery-img" src="images/photo-11.jpg" alt="照片8"></div>
+          <div class="gallery-item"><img class="gallery-img" src="images/photo-12.jpg" alt="照片9"></div>
+          <div class="gallery-item"><img class="gallery-img" src="images/photo-13.jpg" alt="照片10"></div>
+        </div>
+      </div>
+      <div class="gallery-dots" id="galleryDots"></div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+      <div class="footer-divider">
+        <div class="footer-line"></div>
+        <div class="footer-diamond"></div>
+        <div class="footer-line"></div>
+      </div>
+      <span class="footer-text">期待您的到来</span>
+      <div class="footer-couple">
+        <span class="footer-couple-name">蒋丁男</span>
+        <span class="footer-couple-amp">&</span>
+        <span class="footer-couple-name">刘楠楠</span>
+      </div>
+      <span class="footer-date" id="footerDate"></span>
+      <div class="footer-rsvp" id="footerRsvp">
+        <span class="footer-rsvp-text">别忘了填写回执哦~ →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 回执页面 ===== -->
+  <section class="rsvp-section" id="rsvpSection">
+    <div class="rsvp-container">
+      <div class="page-header">
+        <div class="divider">
+          <span class="divider-text">RSVP</span>
+        </div>
+        <span class="page-title">宾客回执</span>
+        <span class="page-subtitle">请于婚礼前一周填写回执，方便我们安排</span>
+      </div>
+
+      <form class="rsvp-form card" id="rsvpForm">
+        <!-- 姓名 -->
+        <div class="form-item">
+          <div class="form-label-row">
+            <span class="form-label">姓名</span>
+            <span class="form-required">*</span>
+          </div>
+          <input type="text" class="form-input" id="rsvpName" placeholder="请输入您的姓名">
+        </div>
+
+        <!-- 手机号 -->
+        <div class="form-item">
+          <div class="form-label-row">
+            <span class="form-label">手机号</span>
+            <span class="form-required">*</span>
+          </div>
+          <input type="tel" class="form-input" id="rsvpPhone" placeholder="请输入手机号" maxlength="11">
+        </div>
+
+        <!-- 是否参加 -->
+        <div class="form-item">
+          <div class="form-label-row">
+            <span class="form-label">是否出席</span>
+            <span class="form-required">*</span>
+          </div>
+          <div class="attend-options">
+            <div class="attend-option" data-value="yes" id="attendYes">
+              <span class="attend-text">欣然赴约</span>
+            </div>
+            <div class="attend-option" data-value="no" id="attendNo">
+              <span class="attend-text">遗憾缺席</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 赴宴人数 -->
+        <div class="form-item" id="guestCountItem" style="display:none;">
+          <div class="form-label-row">
+            <span class="form-label">赴宴人数</span>
+          </div>
+          <div class="number-selector">
+            <div class="number-btn" id="decreaseGuests">-</div>
+            <div class="number-display">
+              <span class="number-value" id="guestCount">1</span>
+              <span class="number-unit">人</span>
+            </div>
+            <div class="number-btn" id="increaseGuests">+</div>
+          </div>
+        </div>
+
+        <!-- 行程信息分隔 -->
+        <div class="section-divider" id="tripDivider" style="display:none;">
+          <div class="section-divider-line"></div>
+          <span class="section-divider-text">行程信息</span>
+          <span class="section-divider-hint">外地来宾请填写</span>
+          <div class="section-divider-line"></div>
+        </div>
+
+        <!-- 是否为外地来宾 -->
+        <div class="form-item" id="outtownItem" style="display:none;">
+          <div class="form-label-row">
+            <span class="form-label">是否为外地来宾</span>
+          </div>
+          <div class="attend-options">
+            <div class="attend-option small" data-value="yes" id="outtownYes">
+              <span class="attend-text">外地来宾</span>
+            </div>
+            <div class="attend-option small" data-value="no" id="outtownNo">
+              <span class="attend-text">本地来宾</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 出发城市 -->
+        <div class="form-item" id="departCityItem" style="display:none;">
+          <div class="form-label-row">
+            <span class="form-label">出发城市</span>
+          </div>
+          <input type="text" class="form-input" id="departCity" placeholder="如：北京">
+        </div>
+
+        <!-- 交通方式 -->
+        <div class="form-item" id="transportItem" style="display:none;">
+          <div class="form-label-row">
+            <span class="form-label">交通方式</span>
+          </div>
+          <div class="diet-tags" id="transportOptions">
+            <div class="diet-tag" data-value="飞机">飞机</div>
+            <div class="diet-tag" data-value="高铁/火车">高铁/火车</div>
+            <div class="diet-tag" data-value="自驾">自驾</div>
+            <div class="diet-tag" data-value="大巴">大巴</div>
+          </div>
+        </div>
+
+        <!-- 到达时间 -->
+        <div class="form-item" id="arriveItem" style="display:none;">
+          <div class="form-label-row">
+            <span class="form-label">到达银川时间</span>
+          </div>
+          <div class="datetime-picker">
+            <input type="date" class="picker-value" id="arriveDate">
+            <input type="time" class="picker-value" id="arriveTime">
+          </div>
+        </div>
+
+        <!-- 航班/车次 -->
+        <div class="form-item" id="flightNoItem" style="display:none;">
+          <div class="form-label-row">
+            <span class="form-label">航班/车次号</span>
+          </div>
+          <input type="text" class="form-input" id="flightNo" placeholder="如：MU5123 / G1234（选填）">
+        </div>
+
+        <!-- 返程时间 -->
+        <div class="form-item" id="departItem" style="display:none;">
+          <div class="form-label-row">
+            <span class="form-label">返程时间</span>
+          </div>
+          <div class="datetime-picker">
+            <input type="date" class="picker-value" id="departDate">
+            <input type="time" class="picker-value" id="departTime">
+          </div>
+        </div>
+
+        <!-- 留言 -->
+        <div class="form-item">
+          <div class="form-label-row">
+            <span class="form-label">留言备注</span>
+          </div>
+          <textarea class="form-textarea" id="rsvpRemark" placeholder="有什么想对我们说的..." maxlength="200"></textarea>
+        </div>
+
+        <!-- 提交按钮 -->
+        <div class="submit-btn" id="submitBtn">
+          <span class="submit-text">提交回执</span>
+        </div>
+      </form>
+
+      <!-- 已提交回执展示 -->
+      <div class="rsvp-result card" id="rsvpResult" style="display:none;">
+        <span class="result-title">回执已提交</span>
+        <span class="result-desc">感谢您的回复，期待与您相见！</span>
+        <div class="result-info" id="resultInfo"></div>
+      </div>
+
+      <!-- 出席统计 -->
+      <div class="stats-card card" id="statsCard" style="display:none;">
+        <div class="stats-title">
+          <div class="title-deco"></div>
+          <span>宾客回执统计</span>
+          <div class="title-deco"></div>
+        </div>
+        <div class="stats-row">
+          <div class="stats-item">
+            <span class="stats-num" id="statsTotal">0</span>
+            <span class="stats-label">已回复</span>
+          </div>
+          <div class="stats-item attending">
+            <span class="stats-num" id="statsAttending">0</span>
+            <span class="stats-label">出席</span>
+          </div>
+          <div class="stats-item declined">
+            <span class="stats-num" id="statsDeclined">0</span>
+            <span class="stats-label">缺席</span>
+          </div>
+          <div class="stats-item total-guests">
+            <span class="stats-num" id="statsTotalGuests">0</span>
+            <span class="stats-label">总人数</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 隐私政策页面链接 -->
+  <div class="privacy-policy-link">
+    <a href="privacy.html">隐私政策</a>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
